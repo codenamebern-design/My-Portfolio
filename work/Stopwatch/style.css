@@ -1,0 +1,65 @@
+body {
+  background: linear-gradient(145deg, rgb(44, 199, 44), cyan);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+.container {
+  border: solid;
+  text-align: center;
+  border-radius: 20px;
+  width: 21em;
+  height: 33em;
+  padding: 10px;
+  margin: auto;
+  background: linear-gradient(145deg, cyan, rgb(88, 244, 88));
+  margin-top: 1em;
+}
+
+h1 {
+  border: solid 5px;
+  border-radius: 10px;
+  margin-top: 2px;
+  margin-bottom: 20px;
+  font-size: 50px;
+  font-family:
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Roboto,
+    Oxygen,
+    Ubuntu,
+    Cantarell,
+    "Open Sans",
+    "Helvetica Neue",
+    sans-serif;
+}
+button {
+  font-size: 30px;
+  font-weight: bold;
+  margin-top: -15px;
+  border-bottom-width: 7px;
+  border-bottom-color: gray;
+}
+button:active {
+  border-bottom-width: 5px;
+
+  transform: translateY(2px);
+}
+.startBtn {
+  background-color: lime;
+}
+
+.stopBtn {
+  background-color: red;
+}
+
+.resetBtn {
+  background-color: rgb(68, 68, 249);
+}
+img {
+  width: 20em;
+  height: 25em;
+  border-radius: 10px;
+}
