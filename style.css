@@ -676,9 +676,4 @@ a:focus-visible {
   .tool-logos img:hover {
     transform: translateY(-4px) scale(1.1);
   }
-  /* Claude's icon is a single-color SVG, so give it a fill */
-  .tool-logos img.logo-dark {
-    filter: invert(1) brightness(0.9);
-  }
-
   
