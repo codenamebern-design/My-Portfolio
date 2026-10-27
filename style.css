@@ -52,9 +52,7 @@ section,header,nav,main,footer{
   max-width: 100%;
   min-width: 0;
 }
-.logo{
-  overflow-x: hidden;
-}
+
 
 a {
   color: inherit;
@@ -200,6 +198,7 @@ dd {
   background: var(--ink);
   color: var(--paper);
   text-transform: uppercase;
+  display:block;
 }
 .nav-links {
   display: flex;
