@@ -97,7 +97,7 @@ dd {
   font-weight: 400;
   font-size: clamp(40px, 7vw, 96px);
   line-height: 0.95;
-  letter-spacing: -0.02em;
+  letter-spacing: -0.07em;
   text-transform: uppercase;
 }
 
@@ -677,3 +677,192 @@ a:focus-visible {
     transform: translateY(-4px) scale(1.1);
   }
   
+  /* ---------- Certifications & Achievements ---------- */
+.credentials {
+  background: var(--white);
+}
+
+.credentials-head {
+  margin-bottom: 40px;
+}
+
+.section-intro {
+  max-width: 680px;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.credentials-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.55fr) minmax(280px, 0.75fr);
+  gap: 32px;
+  align-items: start;
+}
+
+.credential-card {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  border: var(--bw) solid var(--ink);
+  background: var(--paper);
+  box-shadow: var(--sh) var(--sh) 0 var(--ink);
+}
+
+.credential-card-head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 22px 24px;
+  border-bottom: var(--bw) solid var(--ink);
+}
+
+.credential-type {
+  display: inline-block;
+  margin-bottom: 10px;
+  padding: 5px 10px;
+  border: 2px solid var(--ink);
+  background: var(--accent);
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.credential-card h3 {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: clamp(20px, 3vw, 30px);
+  line-height: 1.1;
+  text-transform: uppercase;
+}
+
+.credential-year {
+  flex: 0 0 auto;
+  font-family: var(--font-display);
+  font-size: 24px;
+}
+
+.certificate-viewer {
+  aspect-ratio: 864.57 / 609.45;
+  min-height: 320px;
+  border-bottom: var(--bw) solid var(--ink);
+  background: var(--white);
+}
+
+.certificate-viewer iframe {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: 0;
+  background: var(--white);
+}
+
+.credential-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 18px 24px;
+}
+
+.credential-actions p {
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.achievements {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  min-width: 0;
+}
+
+.achievements-title {
+  font-family: var(--font-display);
+  font-size: clamp(24px, 3vw, 34px);
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.achievement-card {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: 16px;
+  padding: 20px;
+  border: var(--bw) solid var(--ink);
+  background: var(--paper);
+  box-shadow: var(--sh) var(--sh) 0 var(--ink);
+  transition:
+    transform 0.08s linear,
+    box-shadow 0.08s linear;
+}
+
+.achievement-card:hover {
+  transform: translate(var(--sh), var(--sh));
+  box-shadow: 0 0 0 var(--ink);
+}
+
+.achievement-number {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 46px;
+  height: 46px;
+  background: var(--ink);
+  color: var(--accent);
+  font-family: var(--font-display);
+  font-size: 18px;
+}
+
+.achievement-body {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  min-width: 0;
+}
+
+.achievement-body h3 {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: 20px;
+  line-height: 1.15;
+  text-transform: uppercase;
+}
+
+.achievement-body p {
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.achievement-date {
+  align-self: flex-start;
+  padding: 4px 8px;
+  border: 2px solid var(--ink);
+  background: var(--white);
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+@media (max-width: 900px) {
+  .credentials-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 560px) {
+  .credential-card-head,
+  .credential-actions {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .certificate-viewer {
+    min-height: 240px;
+  }
+
+  .achievement-card {
+    grid-template-columns: 1fr;
+  }
+}
