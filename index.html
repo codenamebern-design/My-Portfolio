@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-theme="dark">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -8,6 +8,15 @@
       name="description"
       content="Beginner web developer and student, aiming to become a full-stack web developer."
     />
+    <script>
+      /* apply saved theme before first paint (prevents a flash) */
+      try {
+        var saved = localStorage.getItem("theme");
+        if (saved === "light" || saved === "dark") {
+          document.documentElement.setAttribute("data-theme", saved);
+        }
+      } catch (e) {}
+    </script>
     <link rel="stylesheet" href="style.css" />
     <link
       rel="shortcut icon"
@@ -23,9 +32,40 @@
         <div class="nav-links">
           <a href="#work" class="btn">Work</a>
           <a href="#about" class="btn">About</a>
-          <a href="#stack" class="btn">Tools</a>
-          <a href="#certifications"class="btn">Achievements<a>
+
+          <div class="dropdown">
+            <button
+              class="btn dropdown-toggle"
+              type="button"
+              aria-haspopup="true"
+              aria-expanded="false"
+            >
+              More
+            </button>
+            <div class="dropdown-menu">
+              <a href="#stack">Tools</a>
+              <a href="#certifications">Certifications</a>
+              <a href="#achievements">Achievements</a>
+            </div>
+          </div>
+
           <a href="#contact" class="btn btn--accent btn--shadow">Contact</a>
+
+          <button
+            id="themeToggle"
+            class="btn theme-toggle"
+            type="button"
+            aria-label="Switch to light mode"
+            title="Toggle light / dark mode"
+          >
+            <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <circle cx="12" cy="12" r="4"></circle>
+              <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"></path>
+            </svg>
+            <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+            </svg>
+          </button>
         </div>
       </nav>
     </header>
@@ -59,7 +99,6 @@
 
           <aside class="profile-card">
             <img
-              style="max-width: 100%; height: auto; display: block"
               src="./images/Bern Lloyd Graduation Pic.jpeg"
               alt="Photo of Bern Lloyd Emperado"
             />
@@ -80,18 +119,17 @@
       <section class="ticker" aria-label="Keywords">
         <div class="ticker-track">
           <div class="ticker-group">
-            <span>Beginner Web Developer</span
-            ><span aria-hidden="true">&#9632;</span> <span>Problem Solver</span
-            ><span aria-hidden="true">&#9632;</span>
-            <span>Uses AI as a tool</span
-            ><span aria-hidden="true">&#9632;</span> <span>Playing chess</span
-            ><span aria-hidden="true">&#9632;</span>
-            <span>Basic Backend Development</span
-            ><span aria-hidden="true">&#9632;</span>
+            <span>Beginner Web Developer</span><span aria-hidden="true">&#9632;</span>
+            <span>Problem Solver</span><span aria-hidden="true">&#9632;</span>
+            <span>Uses AI as a tool</span><span aria-hidden="true">&#9632;</span>
+            <span>Playing Rubik's Cube</span><span aria-hidden="true">&#9632;</span>
+            <span>Playing chess</span><span aria-hidden="true">&#9632;</span>
+            <span>Basic Backend Development</span><span aria-hidden="true">&#9632;</span>
           </div>
           <div class="ticker-group" aria-hidden="true">
-            <span>Web Development</span><span>&#9632;</span>
+            <span>Beginner Web Developer</span><span>&#9632;</span>
             <span>Problem Solver</span><span>&#9632;</span>
+            <span>Uses AI as a tool</span><span>&#9632;</span>
             <span>Playing Rubik's Cube</span><span>&#9632;</span>
             <span>Playing chess</span><span>&#9632;</span>
             <span>Basic Backend Development</span><span>&#9632;</span>
@@ -114,16 +152,16 @@
           </div>
 
           <div class="work-grid">
+            <div class="aos-wrap" data-aos="fade-right" data-aos-delay="0">
             <a
               href="https://personal-calculator-ni-bern.netlify.app/"
               class="card"
             >
-              <div class="placeholder card-img">
+              <div class="card-img">
                 <iframe
                   src="https://personal-calculator-ni-bern.netlify.app/"
-                  frameborder="0"
-                  width="1000"
-                  height="560"
+                  title="Preview of Personal Calculator"
+                  loading="lazy"
                 ></iframe>
               </div>
               <div class="card-body">
@@ -133,25 +171,26 @@
                 <h3 class="card-title">Personal Calculator</h3>
                 <p class="card-desc">
                   I struggled to center it, but now I finally know how to center
-                  a <span style="color: blue">div</span> element.
+                  a <span class="hl">div</span> element.
                 </p>
                 <div class="card-foot">
-                  <span>My First ever project </span
-                  ><span class="arrow" aria-hidden="true">&rarr;</span>f
+                  <span>My First ever project</span
+                  ><span class="arrow" aria-hidden="true">&rarr;</span>
                 </div>
               </div>
             </a>
+            </div>
 
+            <div class="aos-wrap" data-aos="fade-right" data-aos-delay="150">
             <a
-              href="https://personal-stopwatch-ni-bern.netlify.app/
-              "class="card"
+              href="https://personal-stopwatch-ni-bern.netlify.app/"
+              class="card"
             >
-              <div class="placeholder card-img">
+              <div class="card-img">
                 <iframe
                   src="https://personal-stopwatch-ni-bern.netlify.app/"
-                  frameborder="0"
-                  width="1000"
-                  height="560"
+                  title="Preview of Personal Stopwatch"
+                  loading="lazy"
                 ></iframe>
               </div>
               <div class="card-body">
@@ -169,14 +208,18 @@
                 </div>
               </div>
             </a>
+            </div>
 
-            <a href="https://princes-jean-dela-pena-portfolio.netlify.app/" class="card">
-              <div class="placeholder card-img">
+            <div class="aos-wrap" data-aos="fade-right" data-aos-delay="300">
+            <a
+              href="https://princes-jean-dela-pena-portfolio.netlify.app/"
+              class="card"
+            >
+              <div class="card-img">
                 <iframe
                   src="https://princes-jean-dela-pena-portfolio.netlify.app/"
-                  frameborder="0"
-                  width="1000"
-                  height="560"
+                  title="Preview of Client Portfolio Website"
+                  loading="lazy"
                 ></iframe>
               </div>
               <div class="card-body">
@@ -185,8 +228,7 @@
                 </div>
                 <h3 class="card-title">Client Portfolio Website</h3>
                 <p class="card-desc">
-                  “Client Portfolio Website” / “A portfolio website I built for
-                  my first client.”
+                  A portfolio website I built for my first client.
                 </p>
                 <div class="card-foot">
                   <span>Portfolio website for my client</span
@@ -194,14 +236,15 @@
                 </div>
               </div>
             </a>
+            </div>
 
+            <div class="aos-wrap" data-aos="fade-right" data-aos-delay="450">
             <a href="https://paglaom.netlify.app/" class="card">
-              <div class="placeholder card-img">
+              <div class="card-img">
                 <iframe
                   src="https://paglaom.netlify.app/"
-                  frameborder="0"
-                  width="1000"
-                  height="560"
+                  title="Preview of Mini Bible App"
+                  loading="lazy"
                 ></iframe>
               </div>
               <div class="card-body">
@@ -219,6 +262,7 @@
                 </div>
               </div>
             </a>
+            </div>
           </div>
         </div>
       </section>
@@ -233,9 +277,6 @@
               website.
             </h2>
             <p class="about-copy">
-              <!-- [A short paragraph of background: where you started, what you have
-              shipped, what you care about. Two to four sentences. Skip the
-              buzzwords.] -->
               It started in Grade 12, when I began making basic websites on my
               phone with Spck Editor, a portable IDE for phones.
             </p>
@@ -258,14 +299,10 @@
               <dt>Available</dt>
               <dd>October–November 2026</dd>
             </div>
-            <!-- <div class="facts-link">
-              <a href="cv.pdf">Download CV &rarr;</a>
-            </div> -->
           </dl>
         </div>
       </section>
 
-      <!-- STACK -->
       <!-- STACK -->
       <section id="stack" class="section">
         <div class="container section-pad">
@@ -301,6 +338,7 @@
               </div>
               <p>HTML / CSS / JavaScript / EJS</p>
             </div>
+
             <div class="stack-item">
               <h3>Backend</h3>
               <div class="tool-logos">
@@ -317,6 +355,7 @@
               </div>
               <p>Node.js / Express.js</p>
             </div>
+
             <div class="stack-item">
               <h3>Database</h3>
               <div class="tool-logos">
@@ -328,6 +367,7 @@
               </div>
               <p>MongoDB</p>
             </div>
+
             <div class="stack-item">
               <h3>Workflow</h3>
               <div class="tool-logos">
@@ -350,7 +390,6 @@
                   src="./images/claude-ai-logo.png"
                   alt="Claude"
                   title="Claude"
-                  class="logo-dark"
                 />
               </div>
               <p>VS Code / Git / GitHub / Claude</p>
@@ -360,76 +399,77 @@
       </section>
 
       <!-- CERTIFICATIONS & ACHIEVEMENTS -->
-<section id="certifications" class="section credentials">
-  <div class="container section-pad">
-    <div class="section-head credentials-head">
-      <div class="tag">04 / Certifications &amp; achievements</div>
-      <h2 class="section-title">Credentials</h2>
-      <p class="section-intro">
-        Proof of what I have learned and the milestones I have reached so
-        far in my web-development journey.
-      </p>
-    </div>
-
-    <div class="credentials-grid">
-      <article class="credential-card">
-        <div class="credential-card-head">
-          <div>
-            <span class="credential-type">Certification</span>
-            <h3>Beginner Challenges: Practice Basic Concepts</h3>
-          </div>
-          <span class="credential-year">2026</span>
-        </div>
-
-        <div class="certificate-viewer">
-          <img
-            src="./images/screenshot_20261029_145559-region.png"
-            title="Coddy Beginner Challenges certificate of completion"
-          ></img>
-        </div>
-
-        <div class="credential-actions">
-          <p>Issued by Coddy</p>
-          <a
-            class="btn btn--accent btn--shadow"
-            href="/certifications/Cody.tech.pdf"
-            target="_blank"
-            rel="noopener noreferrer"
-            >View certificate</a
-          >
-        </div>
-      </article>
-
-      <div class="achievements">
-        <div class="achievements-title">Achievements</div>
-
-        <article class="achievement-card">
-          <span class="achievement-number">01</span>
-          <div class="achievement-body">
-            <h3>First client website</h3>
-            <p>
-              Designed and delivered a custom portfolio website for my
-              first client.
+      <section id="certifications" class="section credentials">
+        <div class="container section-pad">
+          <div class="section-head credentials-head">
+            <div class="tag">04 / Certifications &amp; achievements</div>
+            <h2 class="section-title">Credentials</h2>
+            <p class="section-intro">
+              Proof of what I have learned and the milestones I have reached so
+              far in my web-development journey.
             </p>
-            <span class="achievement-date">October 2026</span>
           </div>
-        </article>
 
-        <article class="achievement-card">
-          <span class="achievement-number">02</span>
-          <div class="achievement-body">
-            <h3>Launched Paglaom</h3>
-            <p>
-              Built and published a mini Bible app using web-development
-              fundamentals and AI assistance.
-            </p>
-            <span class="achievement-date">October 2026</span>
+          <div class="credentials-grid">
+            <article class="credential-card">
+              <div class="credential-card-head">
+                <div>
+                  <span class="credential-type">Certification</span>
+                  <h3>Beginner Challenges: Practice Basic Concepts</h3>
+                </div>
+                <span class="credential-year">2026</span>
+              </div>
+
+              <div class="certificate-viewer">
+                <img
+                  src="./images/screenshot_20261029_145559-region.png"
+                  alt="Coddy Beginner Challenges certificate of completion"
+                  title="Coddy Beginner Challenges certificate of completion"
+                />
+              </div>
+
+              <div class="credential-actions">
+                <p>Issued by Coddy</p>
+                <a
+                  class="btn btn--accent btn--shadow"
+                  href="/certifications/Cody.tech.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >View certificate</a
+                >
+              </div>
+            </article>
+
+            <div class="achievements" id="achievements">
+              <div class="achievements-title">Achievements</div>
+
+              <article class="achievement-card">
+                <span class="achievement-number">01</span>
+                <div class="achievement-body">
+                  <h3>First client website</h3>
+                  <p>
+                    Designed and delivered a custom portfolio website for my
+                    first client.
+                  </p>
+                  <span class="achievement-date">October 2026</span>
+                </div>
+              </article>
+
+              <article class="achievement-card">
+                <span class="achievement-number">02</span>
+                <div class="achievement-body">
+                  <h3>Launched Paglaom</h3>
+                  <p>
+                    Built and published a mini Bible app using web-development
+                    fundamentals and AI assistance.
+                  </p>
+                  <span class="achievement-date">October 2026</span>
+                </div>
+              </article>
+            </div>
           </div>
-        </article>
-      </div>
-    </div>
-  </div>
-</section>
+        </div>
+      </section>
 
       <!-- CONTACT -->
       <section id="contact" class="contact">
@@ -460,6 +500,32 @@
         <a href="#top">Back to top &uarr;</a>
       </div>
     </footer>
+
+    <script>
+      (function () {
+        var root = document.documentElement;
+        var btn = document.getElementById("themeToggle");
+        if (!btn) return;
+
+        function apply(theme) {
+          root.setAttribute("data-theme", theme);
+          btn.setAttribute(
+            "aria-label",
+            "Switch to " + (theme === "dark" ? "light" : "dark") + " mode"
+          );
+        }
+
+        apply(root.getAttribute("data-theme") || "dark");
+
+        btn.addEventListener("click", function () {
+          var next = root.getAttribute("data-theme") === "dark" ? "light" : "dark";
+          root.classList.add("theme-anim");
+          apply(next);
+          try { localStorage.setItem("theme", next); } catch (e) {}
+          setTimeout(function () { root.classList.remove("theme-anim"); }, 400);
+        });
+      })();
+    </script>
+    <script type="module" src="main.js"></script>
   </body>
-  <script type="module" src="main.js"></script>
 </html>
