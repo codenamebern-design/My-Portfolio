@@ -17,6 +17,8 @@
         }
       } catch (e) {}
     </script>
+
+    
     <link rel="stylesheet" href="style.css" />
     <link
       rel="shortcut icon"
@@ -503,8 +505,8 @@
 
     <script>
       (function () {
-        var root = document.documentElement;
-        var btn = document.getElementById("themeToggle");
+        let root = document.documentElement;
+        let btn = document.getElementById("themeToggle");
         if (!btn) return;
 
         function apply(theme) {
@@ -518,7 +520,7 @@
         apply(root.getAttribute("data-theme") || "dark");
 
         btn.addEventListener("click", function () {
-          var next = root.getAttribute("data-theme") === "dark" ? "light" : "dark";
+          let next = root.getAttribute("data-theme") === "dark" ? "light" : "dark";
           root.classList.add("theme-anim");
           apply(next);
           try { localStorage.setItem("theme", next); } catch (e) {}
