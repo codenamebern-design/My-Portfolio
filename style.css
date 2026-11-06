@@ -283,8 +283,7 @@ html.theme-anim *::after {
   z-index: 60;
 }
 
-.dropdown:hover .dropdown-menu,
-.dropdown:focus-within .dropdown-menu,
+
 .dropdown.open .dropdown-menu,
 .dropdown.is-open .dropdown-menu,
 .dropdown.active .dropdown-menu,
@@ -744,6 +743,15 @@ main > .section:first-child {
   line-height: 1.15;
 }
 
+.fact:hover{
+  transform: rotate(-5deg);
+  transition-duration: 0.2s;
+  transition-timing-function: linear;
+}
+
+.fact:active{
+  transform: rotate(-5deg);
+}
 /* ---------- 9. Stack ---------- */
 .stack {
   display: flex;
@@ -758,6 +766,7 @@ main > .section:first-child {
   border: var(--bw) solid var(--line);
   box-shadow: 8px 8px 0 var(--shadow);
 }
+
 
 .stack-item h3 {
   margin: 0;
@@ -780,6 +789,16 @@ main > .section:first-child {
 .stack-item:nth-child(4) h3 {
   background: var(--blue);
   color: #ffffff;
+}
+
+.stack-item:hover {
+  transform: translateY(-3px);
+  box-shadow: 12px 12px 0 var(--shadow);
+}
+
+.stack-item:active {
+  transform: translateY(-3px);
+  box-shadow: 12px 12px 0 var(--shadow);
 }
 
 .tool-logos {
