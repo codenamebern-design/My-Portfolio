@@ -260,6 +260,7 @@ html.theme-anim *::after {
 .dropdown {
   position: relative;
   display: inline-block;
+  
 }
 
 .dropdown-toggle::after {
@@ -274,6 +275,7 @@ html.theme-anim *::after {
 
 .dropdown-toggle[aria-expanded="true"]::after {
   transform: translateY(1px) rotate(225deg);
+  
 }
 
 .dropdown-menu {
@@ -287,6 +289,7 @@ html.theme-anim *::after {
   border: var(--bw-s) solid var(--line);
   box-shadow: 8px 8px 0 var(--shadow);
   z-index: 60;
+  transition-duration: 1.15s; 
 }
 
 .dropdown.open .dropdown-menu,
@@ -364,7 +367,17 @@ main > .section:first-child {
   line-height: 0.98;
   letter-spacing: -0.02em;
   text-transform: uppercase;
-  text-shadow: 6px 6px 0 var(--accent);
+  transition: text-shadow 0.3s ease;
+}
+
+.hero-name:hover{
+  text-shadow: 2px 6px 5px var(--accent);
+  
+}
+
+.hero-name:active-view-transition{
+  text-shadow: 2px 6px 5px var(--accent);
+  transition: text-shadow 0.3s ease;
 }
 
 .hero-role {
