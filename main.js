@@ -1,6 +1,9 @@
 import Typed from "typed.js";
 import AOS from "aos";
 import "aos/dist/aos.css";
+
+// ! Anime.js
+import { animate, splitText, stagger } from 'animejs';
 //!For typed js
 //for bellow the Name
 new Typed("#typednako", {
@@ -58,4 +61,32 @@ AOS.init({
 // recalculate positions after iframes and images finish loading
 window.addEventListener("load", () => AOS.refresh());
 
+//! text animation -> anime.js
 
+const section = document.querySelector('#about');          // your section
+const { words } = splitText('#about ', {
+  words: { wrap: 'clip' },
+});
+
+const animation = animate(words, {
+  y: [
+    { to: ['100%', '0%'] },
+    { to: '0%', delay: 750, ease: 'in(3)' }
+  ],
+  duration: 550,
+  ease: 'out(3)',
+  delay: stagger(100),
+  loop: false,
+  autoplay: false,   // don't start on page load
+});
+
+const observer = new IntersectionObserver(
+  ([entry]) => {
+    if (entry.isIntersecting) {
+      animation.play();   // replay from the start each time you arrive
+    }
+  },
+  { threshold: 0.4 }          // 40% of the section must be visible
+);
+
+observer.observe(section);
