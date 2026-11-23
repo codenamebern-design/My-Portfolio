@@ -29,7 +29,8 @@
   --focus: #3d5aff;
 
   --font-display: "Archivo Black", "Arial Black", Impact, sans-serif;
-  --font-body: "Space Grotesk", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-body:
+    "Space Grotesk", system-ui, -apple-system, "Segoe UI", sans-serif;
   --font-mono: "Space Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
 
   --bw: 4px; /* big border */
@@ -114,7 +115,10 @@ button:focus-visible {
 html.theme-anim *,
 html.theme-anim *::before,
 html.theme-anim *::after {
-  transition: background-color 0.3s, color 0.3s, border-color 0.3s,
+  transition:
+    background-color 0.3s,
+    color 0.3s,
+    border-color 0.3s,
     box-shadow 0.3s !important;
 }
 
@@ -183,7 +187,9 @@ html.theme-anim *::after {
   line-height: 1.2;
   text-decoration: none;
   cursor: pointer;
-  transition: transform 0.08s, box-shadow 0.08s;
+  transition:
+    transform 0.08s,
+    box-shadow 0.08s;
 }
 
 .btn:hover {
@@ -282,7 +288,6 @@ html.theme-anim *::after {
   box-shadow: 8px 8px 0 var(--shadow);
   z-index: 60;
 }
-
 
 .dropdown.open .dropdown-menu,
 .dropdown.is-open .dropdown-menu,
@@ -536,7 +541,9 @@ main > .section:first-child {
   text-decoration: none;
   border: var(--bw) solid var(--line);
   box-shadow: 8px 8px 0 var(--shadow);
-  transition: transform 0.1s, box-shadow 0.1s;
+  transition:
+    transform 0.1s,
+    box-shadow 0.1s;
 }
 
 .card:hover {
@@ -743,13 +750,13 @@ main > .section:first-child {
   line-height: 1.15;
 }
 
-.fact:hover{
+.fact:hover {
   transform: rotate(-5deg);
   transition-duration: 0.2s;
   transition-timing-function: linear;
 }
 
-.fact:active{
+.fact:active {
   transform: rotate(-5deg);
 }
 /* ---------- 9. Stack ---------- */
@@ -766,7 +773,6 @@ main > .section:first-child {
   border: var(--bw) solid var(--line);
   box-shadow: 8px 8px 0 var(--shadow);
 }
-
 
 .stack-item h3 {
   margin: 0;
@@ -1033,6 +1039,7 @@ main > .section:first-child {
 
 .contact-email {
   display: inline-block;
+  margin: auto;
   max-width: 100%;
   overflow-wrap: anywhere;
   font-family: var(--font-mono);
@@ -1044,7 +1051,9 @@ main > .section:first-child {
   box-shadow: 8px 8px 0 var(--ink);
   padding: 14px 22px;
   text-decoration: none;
-  transition: transform 0.08s, box-shadow 0.08s;
+  transition:
+    transform 0.08s,
+    box-shadow 0.08s;
 }
 
 .contact-email:hover {
@@ -1059,6 +1068,7 @@ main > .section:first-child {
   flex-wrap: wrap;
   gap: 20px;
   margin-top: 8px;
+  margin: auto;
 }
 
 .contact-links .btn {
