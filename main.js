@@ -75,7 +75,7 @@ const animation = animate(words, {
   ],
   duration: 550,
   ease: 'out(3)',
-  delay: stagger(100),
+  delay: stagger(30),
   loop: false,
   autoplay: false,   // don't start on page load
 });
