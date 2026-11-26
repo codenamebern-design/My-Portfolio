@@ -260,7 +260,6 @@ html.theme-anim *::after {
 .dropdown {
   position: relative;
   display: inline-block;
-  
 }
 
 .dropdown-toggle::after {
@@ -275,7 +274,6 @@ html.theme-anim *::after {
 
 .dropdown-toggle[aria-expanded="true"]::after {
   transform: translateY(1px) rotate(225deg);
-  
 }
 
 .dropdown-menu {
@@ -289,7 +287,7 @@ html.theme-anim *::after {
   border: var(--bw-s) solid var(--line);
   box-shadow: 8px 8px 0 var(--shadow);
   z-index: 60;
-  transition-duration: 1.15s; 
+  transition-duration: 1.15s;
 }
 
 .dropdown.open .dropdown-menu,
@@ -370,12 +368,11 @@ main > .section:first-child {
   transition: text-shadow 0.3s ease;
 }
 
-.hero-name:hover{
+.hero-name:hover {
   text-shadow: 2px 6px 5px var(--accent);
-  
 }
 
-.hero-name:active-view-transition{
+.hero-name:active-view-transition {
   text-shadow: 2px 6px 5px var(--accent);
   transition: text-shadow 0.3s ease;
 }
@@ -1219,5 +1216,82 @@ main > .section:first-child {
   .tool-logos img,
   .contact-email {
     transition: none;
+  }
+}
+
+/* New CSS animated background of tools section*/
+/* ---------- Tools background ---------- */
+#stack {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate; /* keeps the shapes behind the content */
+  border-bottom: var(--bw) solid var(--line);
+  background-color: var(--bg);
+  background-image:
+    radial-gradient(
+      circle at 10% 15%,
+      transparent 35%
+    ),
+    radial-gradient(circle at 90% 85%, transparent 40%),
+    linear-gradient(var(--dot) 2px, transparent 2px),
+    linear-gradient(90deg, var(--dot) 2px, transparent 2px);
+  background-size:
+    100% 100%,
+    100% 100%,
+    48px 48px,
+    48px 48px;
+  animation: grid-move 4s linear infinite;
+}
+
+#stack::before,
+#stack::after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  pointer-events: none;
+}
+
+
+
+@keyframes grid-move {
+  to {
+    background-position:
+      0 0,
+      0 0,
+      48px 48px,
+      48px 48px;
+  }
+}
+
+@keyframes star-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes shape-float {
+  to {
+    transform: translate(30px, -40px);
+  }
+}
+
+@media (max-width: 720px) {
+  #stack::before {
+    width: 100px;
+    height: 100px;
+    top: 24px;
+  }
+
+  #stack::after {
+    width: 130px;
+    height: 130px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #stack,
+  #stack::before,
+  #stack::after {
+    animation: none;
   }
 }
